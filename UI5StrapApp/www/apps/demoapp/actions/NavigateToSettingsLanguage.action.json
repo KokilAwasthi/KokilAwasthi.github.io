@@ -1,0 +1,27 @@
+{
+	"//" : "Goto Page 5",
+	"TASKS" : "navigate",
+	
+	"navigate" : {
+		"TYPE" : "ui5strap.task.Navigate",
+		
+		"CONTROLS" : {
+			"NAVIGATOR" : {
+				"TYPE" : "ui5strap.NavContainer",
+				"SOURCE" : "View",
+				"CONTROL_ID" : "navContainerSettings",
+				"VIEW_ID" : "settings"
+			}
+		},
+		
+		"VIEWS" : {
+			"page5" : {
+				"viewName" : "ui5strap.demoapp.views.settings.Language",
+				"transition" : "zoom-in",
+				"writeHistory" : true,
+				"target" : "content"
+			}
+		}
+	}
+	
+}

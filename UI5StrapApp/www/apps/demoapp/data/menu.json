@@ -1,0 +1,109 @@
+{
+
+	"root" : [
+	
+		{
+			"label" : "PAGE_FEED_TITLE",
+			"id" : "feed",
+			"badge" : "1",
+			"icon" : "feed",
+			"severity" : "Danger"
+		},
+		
+		{
+			"label" : "PAGE_STATISTICS_TITLE",
+			"id" : "statistics",
+			"icon" : "bar-chart",
+			"severity" : "Warning"
+		},
+		{
+			"label" : "PAGE_SETTINGS_TITLE",
+			"id" : "settings",
+			"icon" : "cog",
+			"severity" : "Success"
+		},
+		{
+			"label" : "PAGE_CONTROLS_TITLE",
+			"id" : "controls",
+			"icon" : "toggle-on",
+			"severity" : "Success"
+		}
+		
+	],
+	
+	"subMenuSettings" : [
+	
+		{
+			"label" : "PAGE_SETTINGS_LANGUAGE_TITLE",
+			"id" : "settingsLanguage",
+			"icon" : "language"
+		},
+		{
+			"label" : "PAGE_SETTINGS_THEME_TITLE",
+			"id" : "settingsTheme",
+			"icon" : "paint-brush"
+		}		
+	
+	],
+	
+	"subMenuControls" :[
+	
+		{
+			"label" : "PAGE_CONTROLS_BUTTONS_TITLE",
+			"id" : "controlsButtons",
+			"icon" : "square-o"
+		},
+		{
+			"label" : "PAGE_CONTROLS_CONTAINERS_TITLE",
+			"id" : "controlsContainers",
+			"icon" : "list-alt"
+		},
+		{
+			"label" : "PAGE_CONTROLS_ICONS_TITLE",
+			"id" : "controlsIcons",
+			"icon" : "soccer-ball-o"
+		},
+		{
+			"label" : "PAGE_CONTROLS_TYPOGRAPHY_TITLE",
+			"id" : "controlsTypography",
+			"icon" : "font"
+		},
+		{
+			"label" : "PAGE_CONTROLS_NAVS_TITLE",
+			"id" : "controlsNavs",
+			"icon" : "exchange"
+		},
+		{
+			"label" : "PAGE_CONTROLS_GRID_SYSTEM_TITLE",
+			"id" : "controlsGridSystem",
+			"icon" : "table"
+		},
+		{
+			"label" : "PAGE_CONTROLS_PROGRESS_TITLE",
+			"id" : "controlsProgress",
+			"icon" : "spinner"
+		},
+		{
+			"label" : "PAGE_CONTROLS_FORM_TITLE",
+			"id" : "controlsForm",
+			"icon" : "columns"
+		},
+		{
+			"label" : "PAGE_CONTROLS_INDICATORS_TITLE",
+			"id" : "controlsIndicators",
+			"icon" : "bell-o"
+		},
+		{
+			"label" : "PAGE_CONTROLS_MEDIA_TITLE",
+			"id" : "controlsMediaList",
+			"icon" : "picture-o"
+		},
+		{
+			"label" : "PAGE_CONTROLS_DIALOGS_TITLE",
+			"id" : "controlsDialogs",
+			"icon" : "clone"
+		}							
+	
+	]
+
+}

@@ -1,0 +1,50 @@
+<View controllerName="ui5strap.ActionController" xmlns="ui5strap" xmlns:demoapp="ui5strap.demoapp.controls"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<!-- The page control -->
+	<Page>
+		<!-- Head area with horizontal bar -->
+		<head>
+			<!-- Bar on top of page -->
+			<Bar>
+				<!-- Left area of bar -->
+				<left>
+					<Button tap="ui5strap.demoapp.actions.ToggleBarMenuSettings" 
+						options="BarButton">
+						<Icon icon="columns" />
+					</Button>
+				</left>
+				<!-- Middle area of bar -->
+				<middle>
+					<Heading text="{i18n>PAGE_SETTINGS_THEME_TITLE}" options="BarHeadingCenter" />
+				</middle>
+			</Bar>
+		</head>
+		
+		<!-- Body area with page content -->
+		<body>
+			<Container type="FluidInset">
+				<Container type="Well">
+					<Paragraph text="{i18n>PAGE_SETTINGS_THEME_INTRO}" />
+					<Container>
+						<ButtonGroup select="ui5strap.demoapp.actions.ChangeTheme" selectionMode="Single">
+							<Button text="base" data:theme="base" selected="true"  />
+							<Button id="defaultThemeButton" severity="Primary" text="ui5strap_default" data:theme="ui5strap_default"  />
+						</ButtonGroup>
+					</Container>
+					<Paragraph text="{i18n>PAGE_SETTINGS_THEME_BACK_NOTICE}" />
+					<Paragraph>
+						<Button 
+						text="{i18n>PAGE_SETTINGS_THEME_BACK_BUTTON}"
+						tap="ui5strap.demoapp.actions.NavigateToStatistics"
+									></Button>
+					</Paragraph>
+				</Container>
+			</Container>
+		</body>
+		<footer>
+				<!-- Bar on top of page -->
+				<Bar></Bar>
+			</footer>	
+	</Page>
+
+</View>

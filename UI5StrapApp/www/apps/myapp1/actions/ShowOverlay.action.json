@@ -1,0 +1,13 @@
+{
+  "__format" : "AJ2.0",
+  "__modules" : "ui5strap.AMShowOverlay",
+
+  "showOverlay" : {
+    
+    "viewName" : "tld__domain.product__app.views.Overlay2",
+    "viewType" : "HTML",
+    "target" : "content",
+    "overlayTransition" : "transition-slide-rtl"
+  
+  }
+}

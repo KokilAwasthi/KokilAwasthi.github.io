@@ -1,0 +1,271 @@
+{
+	"app" : {
+	        "id" : "ui5strap.demoapp",
+	        "name" : "Ui5Strap Demo",
+	        "logLevel" : 5,
+	        "mode" : "Devel"
+	},
+	
+	"css" : [
+		"css/demoapp.css"
+	],
+	
+	"models" : [
+            {
+                "src" : "i18n/i18n.properties",
+                "type" : "RESOURCE",
+                "modelName" : "i18n" 
+            },
+            {
+                "src" : "data/menu.json",
+                "type" : "JSON",
+                "modelName" : "menu" 
+            }
+    ],
+    
+    "views" : [
+    		{
+                "id" : "menuRoot",
+                "viewName" : "MenuRoot",
+                "target" : "bar"
+            },
+            
+            {
+                "id" : "home",
+                "viewName" : "Home"
+            },
+
+            {
+                "id" : "feed",
+                "viewName" : "Feed"
+            },
+
+            {
+                "id" : "statistics",
+                "viewName" : "Statistics"
+            },
+
+            {
+                "id" : "settings",
+                "viewName" : "Settings",
+                "events" : {
+                	"controller" : {
+                		"update" : [
+                			"LoadMenuSettings",
+                			"NavigateToSettingsLanguage"
+                		]
+                	}
+                }
+            },
+            
+            {
+                "id" : "menuSettings",
+                "viewName" : "MenuSettings",
+                "target" : "bar"
+            },
+            
+            {
+                "id" : "settingsLanguage",
+                "viewName" : ".settings.Language",
+                "events" : {
+                	"controller" : {
+                		"update" : "SetCurrentLanguage"	
+                	}
+                }
+            },
+            
+            {
+                "id" : "settingsTheme",
+                "viewName" : ".settings.Theme"
+            },
+            
+            
+            {
+            	"id" : "controls",
+            	"viewName" : "Controls",
+            	"events" : {
+                	"controller" : {
+                		"update" : [
+                			"LoadMenuControls",
+                			"NavigateToControlsButtons"
+                		]
+                	}
+                }
+            },
+            
+            {
+                "id" : "menuControls",
+                "viewName" : "MenuControls",
+                "target" : "bar"
+            },
+            
+            {
+            	"id" : "controlsButtons",
+            	"viewName" : ".controls.Buttons"
+            },
+            
+            {
+            	"id" : "controlsContainers",
+            	"viewName" : ".controls.Containers"
+            },
+            
+            {
+            	"id" : "controlsIcons",
+            	"viewName" : ".controls.Icons"
+            },
+            
+            {
+            	"id" : "controlsTypography",
+            	"viewName" : ".controls.Typography"
+            },
+			
+			{
+            	"id" : "controlsNavs",
+            	"viewName" : ".controls.Navs"
+            },
+            
+            {
+            	"id" : "controlsGridSystem",
+            	"viewName" : ".controls.GridSystem"
+            },
+            
+            {
+            	"id" : "controlsProgress",
+            	"viewName" : ".controls.Progress"
+            },
+            
+            {
+            	"id" : "controlsForm",
+            	"viewName" : ".controls.Form"
+            },
+            
+            {
+            	"id" : "controlsIndicators",
+            	"viewName" : ".controls.Indicators"
+            },
+            
+            {
+            	"id" : "controlsMediaList",
+            	"viewName" : ".controls.MediaList"
+            },
+            
+            {
+            	"id" : "controlsDialogs",
+            	"viewName" : ".controls.Dialogs"
+            },
+            
+            {
+                "id" : "newPost",
+                "viewName" : "NewPost"
+            },
+            {
+                "id" : "postDetail",
+                "viewName" : "PostDetail"
+            }
+      ],
+	
+	"actions" : [
+		"NavigateToHome",
+		"NavigateToFeed",
+		"NavigateToStatistics",
+		
+		
+		"ToggleBarMenuRoot",
+		"NavigateViaMenuRoot",
+		"SetSelectedMenuRoot",
+		
+		"LoadMenuSettings",
+		"ToggleBarMenuSettings",
+		"NavigateViaMenuSettings", 
+		"SetSelectedMenuSettings",
+		"NavigateToSettingsLanguage",
+		
+		"LoadMenuControls",
+		"ToggleBarMenuControls",
+		"NavigateViaMenuControls", 
+		"SetSelectedMenuControls",
+		"NavigateToControlsButtons",
+		
+		"AppendFeed",
+		"RemovePost",
+		"ShowNewPostOverlay",
+		"CloseOverlay",
+		
+		"ChangeTheme",
+		"SelectLanguage",
+		
+		"Debug"
+	],
+	
+	"rootNavigation" : {
+	     "module" : "ui5strap.BarNavContainer",
+         "settings" : {
+         	"barSizeExtraSmall" : 1,
+         	"barPlacementExtraSmall" : "Top",
+         	
+         
+         	"barSizeSmall" : 2,
+         	"barPlacementSmall" : "Right",
+         	
+         	"barSizeMedium" : 1,
+         	"barPlacementMedium" : "Bottom",
+         	"barTransitionMedigum" : "none",
+         	
+         	"barSizeLarge" : 2,
+         	"barPlacementLarge" : "Left",
+         	"barModeLarge" : "IntrudeFixed",
+         	
+         	"barVisible" : false
+         	
+         },
+         
+         "events" : {
+         	"control" : {
+         		"pageChange" : [
+         			"SetSelectedMenuRoot"
+         		]
+         	}
+         },
+         
+         "initialViews" : [
+             "home",
+             "menuRoot"
+         ]
+	},
+	
+	"components" : [
+			{
+	             "id" : "feedManager",
+	             "module" : "FeedManager"
+	        },
+	        
+	        {
+	             "id" : "feedClient",
+	             "module" : "ui5strap.RestClient",
+	             "url" : "api/feed",
+	             "restController" : "FeedController",
+	             "methods" : {
+	             	"info" : {
+	             		"type" : "get",
+	             		"arguments" : ["success", "error"]
+	             	},
+	             	
+	             	"deletePost" : {
+	             		"type" : "postUrlEncoded",
+	             		"arguments" : ["post.postId", "success", "error"]
+	             	},
+	             	
+	             	"readPost" : {
+	             		"path" : "read-post/{postId}",
+	             		"type" : "get",
+	             		"arguments" : ["path.postId", "success", "error"]
+	             	},
+	             	
+	             	"newPost" : {
+	             		"type" : "postWithPayload",
+	             		"arguments" : ["payload", "success", "error"]
+	             	}
+	             }
+	         }
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"TASKS" : "changeTheme",
+
+	"changeTheme" : {
+		"TYPE" : "ui5strap.AMChangeTheme",
+		
+		"CONTROLS" : {
+			"themeButton" : {
+				"SOURCE" : "Event",
+				"TYPE" : "ui5strap.Button",
+				"parameter" : "button"
+			}
+		},
+		
+		
+		"customDataKey" : "theme",
+		"theme" : "= .CONTROLS.themeButton.data(.customDataKey)"
+	}
+	
+}
